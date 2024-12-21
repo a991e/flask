@@ -14,6 +14,8 @@ def forward(url):
       url = url[0:6] + '/' + url[6:]
    elif url.find('https:') != -1:
       url = url[0:7] + '/' + url[7:]
+   else:
+      url = "https://" + url
    parsed_url = urlparse(url)
    referer = parsed_url.scheme + "://" + parsed_url.netloc
    headers = {
