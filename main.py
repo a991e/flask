@@ -24,7 +24,7 @@ def forward(url):
       response = requests.get(url,headers=headers)
    except Exception as e:
       return e
-   return response.content, response.status_code, response.headers.items()
+   return (response.content, response.status_code, response.headers.items())
 
 if __name__ == '__main__':
    app.run(debug=True, port=os.getenv("PORT", default=5000))
