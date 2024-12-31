@@ -20,6 +20,7 @@ def forward():
     }
     try:
         response = requests.get(url,headers=headers,timeout=15)
+        response.headers["Cross-Origin-Resource-Policy"] = "cross-origin"
     except Exception as e:
         return '[-] can not fetch image!'
     return (response.content, response.status_code, response.headers.items())
